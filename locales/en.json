@@ -1,0 +1,406 @@
+{
+  "common": {
+    "appName": "Laxmi",
+    "tagline": "Your Gateway to Prosperity",
+    "apply": "Apply Now",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "viewDetails": "View Details",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "services": "Services",
+    "apply": "Apply",
+    "track": "Track Application",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "logout": "Logout",
+    "partners": "Partners",
+    "resources": "Resources",
+    "faqs": "FAQs",
+    "emiCalculator": "EMI Calculator",
+    "blog": "Blog",
+    "careers": "Careers",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "hero": {
+    "title": "Get Instant Personal Loans",
+    "subtitle": "Up to ₹5,00,000 with minimal documentation",
+    "description": "Quick approval, minimal documentation, transparent process. Your trusted partner for all financial needs.",
+    "features": {
+      "instant": "Instant Approval in 30 seconds",
+      "paperless": "100% Paperless Process",
+      "secure": "Bank-Level Security",
+      "support": "24/7 Customer Support"
+    },
+    "cta": {
+      "primary": "Get Instant Approval",
+      "secondary": "Check Eligibility"
+    },
+    "badge": "RBI Licensed NBFC",
+    "stats": {
+      "customers": "50,000+ Happy Customers",
+      "disbursed": "₹500 Cr+ Disbursed",
+      "rating": "4.8/5 Rating",
+      "branches": "500+ Partner Branches"
+    }
+  },
+  "products": {
+    "title": "Our Loan Products",
+    "subtitle": "Choose the perfect loan for your needs",
+    "types": {
+      "personal": {
+        "name": "Personal Loan",
+        "description": "Quick cash for all your personal needs",
+        "amount": "₹10,000 - ₹5,00,000",
+        "tenure": "3 - 24 months",
+        "rate": "Starting from 1.5% per month",
+        "features": [
+          "30-second approval",
+          "Flexible repayment options",
+          "Minimal documentation",
+          "100% paperless process"
+        ]
+      },
+      "salary": {
+        "name": "Salary Advance",
+        "description": "Get advance up to 2x your monthly salary",
+        "amount": "₹5,000 - ₹2,00,000",
+        "tenure": "1 - 3 months",
+        "rate": "Starting from 1.5% per month",
+        "features": [
+          "Instant approval for salaried",
+          "Auto-deduction from salary",
+          "No collateral required",
+          "500+ partner companies"
+        ]
+      },
+      "emergency": {
+        "name": "Emergency Fund",
+        "description": "24-hour support for medical and urgent needs",
+        "amount": "₹10,000 - ₹2,00,000",
+        "tenure": "3 - 12 months",
+        "rate": "Starting from 1.2% per month",
+        "features": [
+          "24-hour approval",
+          "Direct hospital payment",
+          "Compassionate support",
+          "No questions asked"
+        ]
+      },
+      "festival": {
+        "name": "Festival Advance",
+        "description": "Celebrate every festival without financial worry",
+        "amount": "₹5,000 - ₹1,00,000",
+        "tenure": "1 - 6 months",
+        "rate": "Starting from 1.2% per month",
+        "features": [
+          "Special festival rates",
+          "Quick disbursal",
+          "Flexible repayment",
+          "All festivals covered"
+        ]
+      },
+      "medical": {
+        "name": "Medical Loan",
+        "description": "Healthcare financing for planned treatments",
+        "amount": "₹25,000 - ₹10,00,000",
+        "tenure": "6 - 48 months",
+        "rate": "Starting from 1.0% per month",
+        "features": [
+          "Lowest interest rates",
+          "Hospital tie-ups",
+          "Insurance coordination",
+          "Cashless facility"
+        ]
+      },
+      "travel": {
+        "name": "Travel Now Pay Later",
+        "description": "Book your dream vacation today",
+        "amount": "₹25,000 - ₹3,00,000",
+        "tenure": "3 - 12 months",
+        "rate": "Starting from 1.3% per month",
+        "features": [
+          "Instant booking credit",
+          "Travel insurance included",
+          "Partner discounts",
+          "Zero down payment"
+        ]
+      }
+    }
+  },
+  "features": {
+    "title": "Why Choose LaxmiOne",
+    "subtitle": "Experience the future of digital lending",
+    "list": {
+      "instant": {
+        "title": "Instant Approval",
+        "description": "Get approved in just 30 seconds with our AI-powered system"
+      },
+      "paperless": {
+        "title": "100% Paperless",
+        "description": "Complete digital process from application to disbursement"
+      },
+      "secure": {
+        "title": "Bank-Level Security",
+        "description": "Your data is protected with 256-bit SSL encryption"
+      },
+      "transparent": {
+        "title": "Transparent Pricing",
+        "description": "No hidden charges, clear terms and conditions"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Round-the-clock customer support in multiple languages"
+      },
+      "flexible": {
+        "title": "Flexible Repayment",
+        "description": "Choose tenure and EMI that suits your comfort"
+      }
+    }
+  },
+  "application": {
+    "title": "Loan Application",
+    "steps": {
+      "personal": "Personal Details",
+      "employment": "Employment Info",
+      "documents": "Documents",
+      "loan": "Loan Details",
+      "review": "Review & Submit"
+    },
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "mobile": "Mobile Number",
+      "pan": "PAN Number",
+      "aadhaar": "Aadhaar Number",
+      "dob": "Date of Birth",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "pincode": "PIN Code",
+      "employmentType": "Employment Type",
+      "companyName": "Company Name",
+      "designation": "Designation",
+      "monthlyIncome": "Monthly Income",
+      "loanAmount": "Loan Amount Required",
+      "loanPurpose": "Purpose of Loan",
+      "tenure": "Loan Tenure"
+    },
+    "placeholders": {
+      "fullName": "Enter your full name",
+      "email": "example@email.com",
+      "mobile": "Enter 10-digit mobile number",
+      "pan": "ABCDE1234F",
+      "aadhaar": "XXXX XXXX XXXX",
+      "amount": "Enter amount in ₹"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email",
+      "invalidMobile": "Please enter a valid 10-digit mobile number",
+      "invalidPAN": "Please enter a valid PAN number",
+      "invalidAadhaar": "Please enter a valid Aadhaar number",
+      "minAmount": "Minimum amount is",
+      "maxAmount": "Maximum amount is"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "overview": "Overview",
+    "activeLoans": "Active Loans",
+    "totalOutstanding": "Total Outstanding",
+    "nextEMI": "Next EMI",
+    "creditScore": "Credit Score",
+    "recentTransactions": "Recent Transactions",
+    "quickActions": "Quick Actions",
+    "payEMI": "Pay EMI",
+    "applyLoan": "Apply for New Loan",
+    "viewStatement": "View Statement",
+    "support": "Get Support",
+    "profile": {
+      "title": "My Profile",
+      "personalInfo": "Personal Information",
+      "kycStatus": "KYC Status",
+      "documents": "Documents",
+      "settings": "Settings"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About LaxmiOne",
+      "description": "Your trusted partner for instant personal loans with minimal documentation and quick approval."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "items": {
+        "about": "About Us",
+        "products": "Our Products",
+        "partners": "Partners",
+        "careers": "Careers",
+        "contact": "Contact Us"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "items": {
+        "personal": "Personal Loan",
+        "salary": "Salary Advance",
+        "emergency": "Emergency Fund",
+        "medical": "Medical Loan"
+      }
+    },
+    "legal": {
+      "title": "Legal",
+      "items": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "disclaimer": "Disclaimer",
+        "grievance": "Grievance Redressal"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Mumbai, Maharashtra",
+      "phone": "+91 1800-123-4567",
+      "email": "support@laxmione.com",
+      "hours": "Mon-Sat: 9 AM - 6 PM"
+    },
+    "social": {
+      "title": "Follow Us",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram"
+    },
+    "copyright": "© 2024 LaxmiOne. All rights reserved.",
+    "disclaimer": "LaxmiOne is a registered NBFC regulated by RBI"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We're here to help you",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "address": "Head Office",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Business Hours"
+    },
+    "support": {
+      "title": "24/7 Customer Support",
+      "description": "For urgent assistance, our team is available round the clock",
+      "chat": "Start Live Chat",
+      "call": "Call Now"
+    }
+  },
+  "about": {
+    "title": "About LaxmiOne",
+    "subtitle": "Your Gateway to Financial Freedom",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To make financial services accessible, affordable, and transparent for every Indian, empowering dreams and enabling prosperity."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be India's most trusted digital lending platform, transforming lives through innovative financial solutions."
+    },
+    "values": {
+      "title": "Our Values",
+      "trust": "Trust & Transparency",
+      "innovation": "Innovation",
+      "customer": "Customer First",
+      "integrity": "Integrity"
+    },
+    "stats": {
+      "customers": "Happy Customers",
+      "disbursed": "Amount Disbursed",
+      "branches": "Partner Branches",
+      "team": "Team Members"
+    }
+  },
+  "eligibility": {
+    "title": "Eligibility Criteria",
+    "age": "Age: 21-60 years",
+    "income": "Monthly Income: ₹15,000+",
+    "employment": "Employment: Salaried/Self-employed",
+    "credit": "CIBIL Score: 650+",
+    "documents": "Valid KYC documents"
+  },
+  "process": {
+    "title": "How It Works",
+    "steps": {
+      "apply": {
+        "title": "Apply Online",
+        "description": "Fill the simple application form"
+      },
+      "verify": {
+        "title": "Quick Verification",
+        "description": "Upload documents for instant verification"
+      },
+      "approval": {
+        "title": "Instant Approval",
+        "description": "Get approved in 30 seconds"
+      },
+      "disbursal": {
+        "title": "Money Transfer",
+        "description": "Receive money in your bank account"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Real stories from real people"
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know",
+    "categories": {
+      "general": "General",
+      "eligibility": "Eligibility",
+      "documents": "Documents",
+      "repayment": "Repayment",
+      "charges": "Charges"
+    }
+  },
+  "error": {
+    "404": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist",
+      "button": "Go Home"
+    },
+    "500": {
+      "title": "Server Error",
+      "description": "Something went wrong on our end",
+      "button": "Try Again"
+    },
+    "general": {
+      "title": "Oops! Something went wrong",
+      "description": "Please try again later",
+      "button": "Refresh"
+    }
+  }
+}

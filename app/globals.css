@@ -1,26 +1,231 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --color-bg-primary: 10 14 26;         
+  --color-bg-secondary: 15 20 32;       
+  --color-bg-card: 26 31 46;             
+  --color-bg-hover: 36 41 55;           
+  --color-bg-border: 45 53 72;           
+
+
+  --color-text-primary: 241 245 249;   
+  --color-text-secondary: 148 163 184;  
+  --color-text-muted: 100 116 139;      
+
+
+  --color-blue-600: 37 99 235;          
+  --color-blue-500: 59 130 246;        
+  --color-blue-400: 96 165 250;        
+
+  --color-emerald-600: 5 150 105;      
+  --color-emerald-500: 16 185 129;   
+
+  --color-amber-600: 217 119 6;         
+  --color-amber-500: 245 158 11;       
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+body {
+  background: rgb(10, 14, 26);
+  /* color: rgb(241, 245, 249); */
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+#__next, main {
+  position: relative;
+  z-index: 1;
+}
+
+
+.gradient-primary {
+  background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%);
+}
+
+.gradient-ocean {
+  background: linear-gradient(135deg, rgb(30, 58, 95) 0%, rgb(37, 99, 235) 100%);
+}
+
+.gradient-emerald {
+  background: linear-gradient(135deg, rgb(4, 120, 87) 0%, rgb(16, 185, 129) 100%);
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, rgb(217, 119, 6) 0%, rgb(245, 158, 11) 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, rgb(10, 14, 26) 0%, rgb(15, 20, 32) 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, rgb(26, 31, 46) 0%, rgb(36, 41, 55) 100%);
+}
+
+.gradient-indigo {
+  background: linear-gradient(135deg, rgb(67, 56, 202) 0%, rgb(99, 102, 241) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(16, 185, 129) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.shadow-soft {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-glow {
+  box-shadow:
+    0 0 20px rgba(37, 99, 235, 0.15),
+    0 0 40px rgba(37, 99, 235, 0.1);
+}
+
+.shadow-card {
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.shadow-xl-dark {
+  box-shadow:
+    0 20px 60px -10px rgba(0, 0, 0, 0.6),
+    0 0 40px -10px rgba(37, 99, 235, 0.1);
+}
+
+
+.glass {
+  background: rgba(26, 31, 46, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(36, 41, 55, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 40px rgba(37, 99, 235, 0.2),
+    0 0 30px rgba(16, 185, 129, 0.15);
+  border-color: rgb(37, 99, 235);
+}
+
+
+.btn-primary {
+  background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%);
+  /* color: white; */
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%);
+}
+
+
+.card-dark {
+  background: rgb(26, 31, 46);
+  border: 1px solid rgb(45, 53, 72);
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgb(37, 99, 235);
+}
+
+
+input, textarea, select {
+  background: rgb(26, 31, 46);
+  border: 1px solid rgb(45, 53, 72);
+  /* color: rgb(241, 245, 249); */
+}
+
+input:focus, textarea:focus, select:focus {
+  background: rgb(36, 41, 55);
+  border-color: rgb(37, 99, 235);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 20, 32);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(45, 53, 72);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(82, 82, 91);
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
