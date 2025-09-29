@@ -50,9 +50,9 @@ export function Header() {
       icon: FileText,
       submenu: [
         { name: t.navigation.emiCalculator, href: "/resources/emi-calculator", description: "Calculate your EMI" },
-        { name: "Eligibility Check", href: "/resources/eligibility", description: "Check loan eligibility" },
+        { name: "Eligibility Check", href: "/resources/eligibility-check", description: "Check loan eligibility" },
         { name: "Document Guide", href: "/resources/documents", description: "Required documents" },
-        { name: "Interest Rates", href: "/resources/rates", description: "Current rates" },
+        { name: "Interest Rates", href: "/resources/intrest-rate", description: "Current rates" },
         { name: t.navigation.blog, href: "/resources/blog", description: "Financial insights" },
         { name: t.navigation.faqs, href: "/resources/faqs", description: "Common questions" },
       ]

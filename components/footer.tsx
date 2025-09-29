@@ -47,8 +47,8 @@ export function Footer() {
     ],
     resources: [
       { name: t.navigation.emiCalculator, href: "/resources/emi-calculator" },
-      { name: "Eligibility Check", href: "/resources/eligibility" },
-      { name: "Interest Rates", href: "/resources/rates" },
+      { name: "Eligibility Check", href: "/resources/eligibility-check" },
+      { name: "Interest Rates", href: "/resources/intrest-rate" },
       { name: "Document Checklist", href: "/resources/documents" },
       { name: "How to Apply", href: "/resources/how-to-apply" },
       { name: t.navigation.faqs, href: "/resources/faqs" },
