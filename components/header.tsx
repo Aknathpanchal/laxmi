@@ -62,10 +62,10 @@ export function Header() {
       href: "/partners",
       icon: Users,
       submenu: [
-        { name: "Channel Partners", href: "/partners/channel", description: "Join our network" },
+        { name: "Channel Partners", href: "/partners", description: "Join our network" },
         { name: "Corporate Tie-ups", href: "/partners/corporate", description: "Business partnerships" },
         { name: "API Integration", href: "/partners/api", description: "Developer resources" },
-        { name: "Investor Relations", href: "/partners/investors", description: "For investors" },
+        { name: "Investor Relations", href: "/partners/investor", description: "For investors" },
       ]
     }
   ];

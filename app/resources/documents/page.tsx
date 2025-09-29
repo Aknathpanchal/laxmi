@@ -242,7 +242,7 @@ export default function DocumentGuidePage() {
           <ArrowRight className="w-3 h-3" />
           <span>Resources</span>
           <ArrowRight className="w-3 h-3" />
-          <span className="text-[var(--royal-blue)] font-medium">Document Guide</span>
+          <span className=" font-medium">Document Guide</span>
         </motion.nav>
       </div>
 
@@ -257,7 +257,7 @@ export default function DocumentGuidePage() {
             <FileText className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold font-sora mb-4">
-            <span className="gradient-primary bg-clip-text text-transparent">Document Guide</span>
+            <span className="">Document Guide</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Complete list of required documents for quick loan approval
