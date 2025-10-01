@@ -11,8 +11,8 @@ import {
   Save, X, CreditCard, Key, RefreshCw
 } from 'lucide-react';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { userService } from '@/lib/api/user.service';
-import { authService } from '@/lib/api/auth.service';
+// import { userService } from '@/lib/api/user.service';
+// import { authService } from '@/lib/api/auth.service';
 
 interface SettingSection {
   id: string;
@@ -113,12 +113,12 @@ export default function SettingsPage() {
   const handleProfileUpdate = async () => {
     setIsSaving(true);
     try {
-      const response = await userService.updateProfile(profileData);
-      if (response.success && response.data) {
-        updateUser(response.data);
-        setMessage({ type: 'success', text: 'Profile updated successfully' });
-        setIsEditing(false);
-      }
+      // const response = await userService.updateProfile(profileData);
+      // if (response.success && response.data) {
+      //   updateUser(response.data);
+      //   setMessage({ type: 'success', text: 'Profile updated successfully' });
+      //   setIsEditing(false);
+      // }
     } catch (error) {
       setMessage({ type: 'error', text: 'Failed to update profile' });
     } finally {
@@ -134,14 +134,14 @@ export default function SettingsPage() {
 
     setIsSaving(true);
     try {
-      const response = await authService.changePassword({
-        currentPassword: passwordData.currentPassword,
-        newPassword: passwordData.newPassword
-      });
-      if (response.success) {
-        setMessage({ type: 'success', text: 'Password changed successfully' });
-        setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
-      }
+      // const response = await authService.changePassword({
+      //   currentPassword: passwordData.currentPassword,
+      //   newPassword: passwordData.newPassword
+      // });
+      // if (response.success) {
+      //   setMessage({ type: 'success', text: 'Password changed successfully' });
+      //   setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
+      // }
     } catch (error) {
       setMessage({ type: 'error', text: 'Failed to change password' });
     } finally {

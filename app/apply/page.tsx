@@ -11,7 +11,6 @@ import {
   AlertCircle, ChevronRight, Loader2
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { loansService } from "@/lib/api";
 
 const steps = [
   { id: 1, title: "Personal Details", icon: User },
@@ -120,20 +119,20 @@ export default function ApplyPage() {
         acceptStepUpEMI: false
       };
 
-      // Submit loan application
-      const response = await loansService.applyLoan(applicationData);
+    
+      // const response = await loansService.applyLoan(applicationData);
 
-      if (response.success && response.data) {
-        // Store application details for tracking
-        if (response.data.id) {
-          localStorage.setItem('lastApplicationId', response.data.id);
-          localStorage.setItem('lastLoanNumber', response.data.loanNumber);
-        }
-        // Redirect to success page with loan details
-        router.push(`/track-application?id=${response.data.id}`);
-      } else {
-        setError(response.error || 'Failed to submit application. Please try again.');
-      }
+      // if (response.success && response.data) {
+      //   // Store application details for tracking
+      //   if (response.data.id) {
+      //     localStorage.setItem('lastApplicationId', response.data.id);
+      //     localStorage.setItem('lastLoanNumber', response.data.loanNumber);
+      //   }
+      //   // Redirect to success page with loan details
+      //   router.push(`/track-application?id=${response.data.id}`);
+      // } else {
+      //   setError(response.error || 'Failed to submit application. Please try again.');
+      // }
     } catch (err: any) {
       console.error('Application submission error:', err);
       setError(err.message || 'An unexpected error occurred. Please try again.');

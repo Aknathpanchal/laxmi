@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import { authService } from '@/lib/api';
+// import { authService } from '@/lib/api';
 
 interface User {
   id: string;
@@ -52,22 +52,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (emailOrMobile: string, password: string) => {
     try {
-      const response = await authService.login({
-        emailOrMobile,
-        password,
-      });
+      // const response = await authService.login({
+      //   emailOrMobile,
+      //   password,
+      // });
 
-      if (response.success && response.data) {
-        const userData = response.data.user;
+      // if (response.success && response.data) {
+      //   const userData = response.data.user;
 
-        // Store user data
-        setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
+      //   // Store user data
+      //   setUser(userData);
+      //   localStorage.setItem('user', JSON.stringify(userData));
 
-        return { success: true };
-      } else {
-        return { success: false, error: response.error || 'Login failed' };
-      }
+      //   return { success: true };
+      // } else {
+      //   return { success: false, error: response.error || 'Login failed' };
+      // }
     } catch (error: any) {
       return { success: false, error: error.message || 'An unexpected error occurred' };
     }
@@ -75,7 +75,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = async () => {
     try {
-      await authService.logout();
+      // await authService.logout();
     } catch (error) {
       console.error('Logout error:', error);
     }

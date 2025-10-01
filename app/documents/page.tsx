@@ -11,7 +11,7 @@ import {
   FiCalendar, FiClock, FiFile, FiImage
 } from 'react-icons/fi';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { documentService } from '@/lib/api/document.service';
+// import { documentService } from '@/lib/api/document.service';
 
 interface Document {
   id: string;
@@ -134,13 +134,13 @@ export default function DocumentVaultPage() {
 
   const fetchDocuments = async () => {
     try {
-      const response = await documentService.getDocuments();
-      if (response.success && response.data) {
-        setDocuments(response.data);
-      } else {
-        // Use mock data as fallback
-        setDocuments(mockDocuments);
-      }
+      // const response = await documentService.getDocuments();
+      // if (response.success && response.data) {
+      //   setDocuments(response.data);
+      // } else {
+      //   // Use mock data as fallback
+      //   setDocuments(mockDocuments);
+      // }
     } catch (error) {
       // Use mock data as fallback
       setDocuments(mockDocuments);

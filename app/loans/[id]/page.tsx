@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fi';
 import { Line, Doughnut } from 'react-chartjs-2';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { loansService } from '@/lib/api/loans.service';
+// import { loansService } from '@/lib/api/loans.service';
 
 interface LoanDetails {
   id: string;
@@ -130,15 +130,15 @@ export default function LoanDetailsPage() {
   const fetchLoanDetails = async () => {
     setIsLoading(true);
     try {
-      const response = await loansService.getLoanDetails(params.id as string);
-      if (response.success && response.data) {
-        setLoanDetails(response.data);
-      } else {
-        // Use mock data as fallback
-        setLoanDetails(mockLoanDetails);
-        setEmiSchedule(generateEmiSchedule());
-        setDocuments(mockDocuments);
-      }
+      // const response = await loansService.getLoanDetails(params.id as string);
+      // if (response.success && response.data) {
+      //   setLoanDetails(response.data);
+      // } else {
+      //   // Use mock data as fallback
+      //   setLoanDetails(mockLoanDetails);
+      //   setEmiSchedule(generateEmiSchedule());
+      //   setDocuments(mockDocuments);
+      // }
     } catch (error) {
       // Use mock data as fallback
       setLoanDetails(mockLoanDetails);

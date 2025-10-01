@@ -11,7 +11,7 @@ import {
   ChevronRight, X, Loader2, RefreshCw
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { paymentsService, loansService } from "@/lib/api";
+// import { paymentsService, loansService } from "@/lib/api";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 interface PaymentMethod {
@@ -72,82 +72,82 @@ export default function PaymentsPage() {
     try {
       setIsLoading(true);
 
-      // Fetch EMI schedule and transaction history
-      const [loansRes, transactionsRes] = await Promise.allSettled([
-        loansService.getMyLoans(),
-        paymentsService.getTransactionHistory()
-      ]);
+      // // Fetch EMI schedule and transaction history
+      // const [loansRes, transactionsRes] = await Promise.allSettled([
+      //   loansService.getMyLoans(),
+      //   paymentsService.getTransactionHistory()
+      // ]);
 
-      // Process EMI dues from loans
-      if (loansRes.status === 'fulfilled' && loansRes.value.success && loansRes.value.data) {
-        const dues: EMIDue[] = loansRes.value.data
-          .filter((loan: any) => loan.status === 'ACTIVE' || loan.status === 'DISBURSED')
-          .map((loan: any) => ({
-            loanId: loan.id,
-            loanType: loan.loanType || 'Personal Loan',
-            emiNumber: 1,
-            amount: loan.emi || 0,
-            dueDate: loan.nextPaymentDate || new Date().toISOString(),
-            status: 'pending' as const
-          }));
-        setEmiDues(dues);
-      } else {
-        // Mock data
-        setEmiDues([
-          {
-            loanId: "LN001",
-            loanType: "Personal Loan",
-            emiNumber: 5,
-            amount: 15420,
-            dueDate: "2024-12-05",
-            status: "pending"
-          },
-          {
-            loanId: "LN002",
-            loanType: "Emergency Fund",
-            emiNumber: 3,
-            amount: 5200,
-            dueDate: "2024-12-08",
-            status: "overdue",
-            penaltyAmount: 500
-          }
-        ]);
-      }
+      // // Process EMI dues from loans
+      // if (loansRes.status === 'fulfilled' && loansRes.value.success && loansRes.value.data) {
+      //   const dues: EMIDue[] = loansRes.value.data
+      //     .filter((loan: any) => loan.status === 'ACTIVE' || loan.status === 'DISBURSED')
+      //     .map((loan: any) => ({
+      //       loanId: loan.id,
+      //       loanType: loan.loanType || 'Personal Loan',
+      //       emiNumber: 1,
+      //       amount: loan.emi || 0,
+      //       dueDate: loan.nextPaymentDate || new Date().toISOString(),
+      //       status: 'pending' as const
+      //     }));
+      //   setEmiDues(dues);
+      // } else {
+      //   // Mock data
+      //   setEmiDues([
+      //     {
+      //       loanId: "LN001",
+      //       loanType: "Personal Loan",
+      //       emiNumber: 5,
+      //       amount: 15420,
+      //       dueDate: "2024-12-05",
+      //       status: "pending"
+      //     },
+      //     {
+      //       loanId: "LN002",
+      //       loanType: "Emergency Fund",
+      //       emiNumber: 3,
+      //       amount: 5200,
+      //       dueDate: "2024-12-08",
+      //       status: "overdue",
+      //       penaltyAmount: 500
+      //     }
+      //   ]);
+      // }
 
-      // Process transactions
-      if (transactionsRes.status === 'fulfilled' && transactionsRes.value.success && transactionsRes.value.data) {
-        setTransactions(transactionsRes.value.data.transactions.map((tx: any) => ({
-          id: tx.id,
-          date: tx.createdAt,
-          amount: tx.amount,
-          type: tx.purpose || 'EMI Payment',
-          status: tx.status.toLowerCase() as any,
-          description: tx.purpose || 'EMI Payment',
-          referenceNumber: tx.transactionId || tx.id
-        })));
-      } else {
-        // Mock transactions
-        setTransactions([
-          {
-            id: "TXN001",
-            date: "2024-11-05",
-            amount: 15420,
-            type: "EMI Payment",
-            status: "success",
-            description: "EMI #4 - Personal Loan",
-            referenceNumber: "PAY123456789"
-          },
-          {
-            id: "TXN002",
-            date: "2024-10-05",
-            amount: 15420,
-            type: "EMI Payment",
-            status: "success",
-            description: "EMI #3 - Personal Loan",
-            referenceNumber: "PAY123456788"
-          }
-        ]);
-      }
+      // // Process transactions
+      // if (transactionsRes.status === 'fulfilled' && transactionsRes.value.success && transactionsRes.value.data) {
+      //   setTransactions(transactionsRes.value.data.transactions.map((tx: any) => ({
+      //     id: tx.id,
+      //     date: tx.createdAt,
+      //     amount: tx.amount,
+      //     type: tx.purpose || 'EMI Payment',
+      //     status: tx.status.toLowerCase() as any,
+      //     description: tx.purpose || 'EMI Payment',
+      //     referenceNumber: tx.transactionId || tx.id
+      //   })));
+      // } else {
+      //   // Mock transactions
+      //   setTransactions([
+      //     {
+      //       id: "TXN001",
+      //       date: "2024-11-05",
+      //       amount: 15420,
+      //       type: "EMI Payment",
+      //       status: "success",
+      //       description: "EMI #4 - Personal Loan",
+      //       referenceNumber: "PAY123456789"
+      //     },
+      //     {
+      //       id: "TXN002",
+      //       date: "2024-10-05",
+      //       amount: 15420,
+      //       type: "EMI Payment",
+      //       status: "success",
+      //       description: "EMI #3 - Personal Loan",
+      //       referenceNumber: "PAY123456788"
+      //     }
+      //   ]);
+      // }
     } catch (err) {
       console.error("Failed to fetch payment data:", err);
       setError("Failed to load payment information");
@@ -163,31 +163,31 @@ export default function PaymentsPage() {
     setError(null);
 
     try {
-      // Initiate payment
-      const response = await paymentsService.initiatePayment({
-        amount: selectedEMI.amount + (selectedEMI.penaltyAmount || 0),
-        purpose: 'loan_repayment',
-        loanId: selectedEMI.loanId,
-        description: `EMI Payment #${selectedEMI.emiNumber}`,
-        paymentMethod: selectedPaymentMethod as any
-      });
+      // // Initiate payment
+      // const response = await paymentsService.initiatePayment({
+      //   amount: selectedEMI.amount + (selectedEMI.penaltyAmount || 0),
+      //   purpose: 'loan_repayment',
+      //   loanId: selectedEMI.loanId,
+      //   description: `EMI Payment #${selectedEMI.emiNumber}`,
+      //   paymentMethod: selectedPaymentMethod as any
+      // });
 
-      if (response.success && response.data) {
-        // Handle Razorpay payment
-        if (response.data.razorpayOrderId) {
-          // In production, open Razorpay checkout
-          console.log("Razorpay Order ID:", response.data.razorpayOrderId);
+      // if (response.success && response.data) {
+      //   // Handle Razorpay payment
+      //   if (response.data.razorpayOrderId) {
+      //     // In production, open Razorpay checkout
+      //     console.log("Razorpay Order ID:", response.data.razorpayOrderId);
 
-          // Simulate payment success
-          setTimeout(() => {
-            setShowReceipt(true);
-            setIsProcessing(false);
-          }, 2000);
-        }
-      } else {
-        setError(response.error || "Payment initiation failed");
-        setIsProcessing(false);
-      }
+      //     // Simulate payment success
+      //     setTimeout(() => {
+      //       setShowReceipt(true);
+      //       setIsProcessing(false);
+      //     }, 2000);
+      //   }
+      // } else {
+      //   setError(response.error || "Payment initiation failed");
+      //   setIsProcessing(false);
+      // }
     } catch (err: any) {
       setError(err.message || "Payment processing failed");
       setIsProcessing(false);
@@ -196,14 +196,14 @@ export default function PaymentsPage() {
 
   const downloadReceipt = async (transactionId: string) => {
     try {
-      const blob = await paymentsService.getPaymentReceipt(transactionId);
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `receipt-${transactionId}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
+      // const blob = await paymentsService.getPaymentReceipt(transactionId);
+      // const url = window.URL.createObjectURL(blob);
+      // const a = document.createElement('a');
+      // a.href = url;
+      // a.download = `receipt-${transactionId}.pdf`;
+      // document.body.appendChild(a);
+      // a.click();
+      // window.URL.revokeObjectURL(url);
     } catch (err) {
       console.error("Failed to download receipt:", err);
     }

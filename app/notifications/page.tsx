@@ -10,7 +10,7 @@ import {
   Smartphone, Globe
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { notificationsService } from "@/lib/api";
+// import { notificationsService } from "@/lib/api";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 interface Notification {
@@ -81,14 +81,14 @@ export default function NotificationsPage() {
   const fetchNotifications = async () => {
     try {
       setIsLoading(true);
-      const response = await notificationsService.getNotifications();
+      // const response = await notificationsService.getNotifications();
 
-      if (response.success && response.data) {
-        setNotifications(response.data.notifications);
-      } else {
-        // Use mock data if API fails
-        setNotifications(getMockNotifications());
-      }
+      // if (response.success && response.data) {
+      //   setNotifications(response.data.notifications);
+      // } else {
+      //   // Use mock data if API fails
+      //   setNotifications(getMockNotifications());
+      // }
     } catch (error) {
       console.error("Failed to fetch notifications:", error);
       setNotifications(getMockNotifications());

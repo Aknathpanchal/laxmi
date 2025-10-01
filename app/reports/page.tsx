@@ -25,7 +25,7 @@ import {
   Filler
 } from 'chart.js';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { loanService } from '@/lib/api/loans.service';
+// import { loanService } from '@/lib/api/loans.service';
 
 // Register ChartJS components
 ChartJS.register(

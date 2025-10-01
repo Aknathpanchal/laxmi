@@ -15,7 +15,7 @@ import {
   FaLinkedin, FaInstagram
 } from 'react-icons/fa';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { userService } from '@/lib/api/user.service';
+// import { userService } from '@/lib/api/user.service';
 
 interface Referral {
   id: string;

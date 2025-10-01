@@ -9,7 +9,7 @@ import {
   HelpCircle, FileText, Loader2, Mic, MicOff
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { supportService } from "@/lib/api";
+// import { supportService } from "@/lib/api";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 interface Ticket {
@@ -95,75 +95,75 @@ export default function SupportPage() {
     try {
       setIsLoading(true);
 
-      // Fetch tickets and FAQs
-      const [ticketsRes, faqsRes] = await Promise.allSettled([
-        supportService.getTickets(),
-        supportService.getFAQs()
-      ]);
+      // // Fetch tickets and FAQs
+      // const [ticketsRes, faqsRes] = await Promise.allSettled([
+      //   supportService.getTickets(),
+      //   supportService.getFAQs()
+      // ]);
 
-      // Process tickets
-      if (ticketsRes.status === 'fulfilled' && ticketsRes.value.success && ticketsRes.value.data) {
-        setTickets(ticketsRes.value.data.tickets);
-      } else {
-        // Mock tickets
-        setTickets([
-          {
-            id: "1",
-            ticketNumber: "TKT001",
-            subject: "Unable to make payment",
-            category: "payment",
-            priority: "high",
-            status: "open",
-            createdAt: new Date().toISOString(),
-            lastUpdate: new Date().toISOString(),
-            messages: [
-              {
-                id: "1",
-                sender: "user",
-                message: "I'm trying to pay my EMI but the payment is failing",
-                timestamp: new Date().toISOString()
-              },
-              {
-                id: "2",
-                sender: "agent",
-                senderName: "Support Agent",
-                message: "I understand you're having trouble with your payment. Let me help you with that. Can you please share the error message you're seeing?",
-                timestamp: new Date().toISOString()
-              }
-            ]
-          }
-        ]);
-      }
+      // // Process tickets
+      // if (ticketsRes.status === 'fulfilled' && ticketsRes.value.success && ticketsRes.value.data) {
+      //   setTickets(ticketsRes.value.data.tickets);
+      // } else {
+      //   // Mock tickets
+      //   setTickets([
+      //     {
+      //       id: "1",
+      //       ticketNumber: "TKT001",
+      //       subject: "Unable to make payment",
+      //       category: "payment",
+      //       priority: "high",
+      //       status: "open",
+      //       createdAt: new Date().toISOString(),
+      //       lastUpdate: new Date().toISOString(),
+      //       messages: [
+      //         {
+      //           id: "1",
+      //           sender: "user",
+      //           message: "I'm trying to pay my EMI but the payment is failing",
+      //           timestamp: new Date().toISOString()
+      //         },
+      //         {
+      //           id: "2",
+      //           sender: "agent",
+      //           senderName: "Support Agent",
+      //           message: "I understand you're having trouble with your payment. Let me help you with that. Can you please share the error message you're seeing?",
+      //           timestamp: new Date().toISOString()
+      //         }
+      //       ]
+      //     }
+      //   ]);
+      // }
 
-      // Process FAQs
-      if (faqsRes.status === 'fulfilled' && faqsRes.value.success && faqsRes.value.data) {
-        setFAQs(faqsRes.value.data);
-      } else {
-        // Mock FAQs
-        setFAQs([
-          {
-            id: "1",
-            question: "How do I apply for a loan?",
-            answer: "You can apply for a loan by clicking on the 'Apply Now' button on our homepage. Fill in the application form with your personal and employment details, upload required documents, and submit. You'll receive instant approval decision.",
-            category: "loan",
-            helpful: true
-          },
-          {
-            id: "2",
-            question: "What documents are required for KYC?",
-            answer: "For KYC verification, you need to provide: 1) PAN Card, 2) Aadhaar Card, 3) Selfie with document, 4) Bank Statement (last 3 months), 5) Salary Slip (if salaried).",
-            category: "kyc",
-            helpful: true
-          },
-          {
-            id: "3",
-            question: "How can I track my loan application?",
-            answer: "You can track your loan application by logging into your account and visiting the 'Track Application' section. You'll see real-time status updates of your application.",
-            category: "loan",
-            helpful: true
-          }
-        ]);
-      }
+      // // Process FAQs
+      // if (faqsRes.status === 'fulfilled' && faqsRes.value.success && faqsRes.value.data) {
+      //   setFAQs(faqsRes.value.data);
+      // } else {
+      //   // Mock FAQs
+      //   setFAQs([
+      //     {
+      //       id: "1",
+      //       question: "How do I apply for a loan?",
+      //       answer: "You can apply for a loan by clicking on the 'Apply Now' button on our homepage. Fill in the application form with your personal and employment details, upload required documents, and submit. You'll receive instant approval decision.",
+      //       category: "loan",
+      //       helpful: true
+      //     },
+      //     {
+      //       id: "2",
+      //       question: "What documents are required for KYC?",
+      //       answer: "For KYC verification, you need to provide: 1) PAN Card, 2) Aadhaar Card, 3) Selfie with document, 4) Bank Statement (last 3 months), 5) Salary Slip (if salaried).",
+      //       category: "kyc",
+      //       helpful: true
+      //     },
+      //     {
+      //       id: "3",
+      //       question: "How can I track my loan application?",
+      //       answer: "You can track your loan application by logging into your account and visiting the 'Track Application' section. You'll see real-time status updates of your application.",
+      //       category: "loan",
+      //       helpful: true
+      //     }
+      //   ]);
+      // }
     } catch (error) {
       console.error("Failed to fetch support data:", error);
     } finally {
