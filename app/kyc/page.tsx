@@ -10,7 +10,6 @@ import {
   Eye, Download, RefreshCw
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
-import { usersService } from "@/lib/api";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 interface KYCStep {
@@ -170,16 +169,16 @@ export default function KYCVerificationPage() {
         }));
 
       // Submit KYC
-      const response = await usersService.submitKYC(kycDocuments);
+      // const response = await usersService.submitKYC(kycDocuments);
 
-      if (response.success) {
-        setSuccessMessage("KYC submitted successfully! We'll verify your documents within 24 hours.");
-        setTimeout(() => {
-          router.push('/dashboard');
-        }, 3000);
-      } else {
-        setError(response.error || "Failed to submit KYC");
-      }
+      // if (response.success) {
+      //   setSuccessMessage("KYC submitted successfully! We'll verify your documents within 24 hours.");
+      //   setTimeout(() => {
+      //     router.push('/dashboard');
+      //   }, 3000);
+      // } else {
+      //   setError(response.error || "Failed to submit KYC");
+      // }
     } catch (err: any) {
       setError(err.message || "An error occurred while submitting KYC");
     } finally {
