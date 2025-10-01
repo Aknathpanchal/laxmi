@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/contexts/LanguageContext";
 import { useAuth } from "@/lib/contexts/AuthContext";
-import { usersService } from "@/lib/api";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 interface ProfileData {
@@ -76,32 +75,32 @@ export default function ProfilePage() {
   const fetchProfile = async () => {
     try {
       setIsLoading(true);
-      const response = await usersService.getProfile();
+      // const response = await usersService.getProfile();
 
-      if (response.success && response.data) {
-        const data = response.data;
-        setProfileData({
-          firstName: data.firstName || "",
-          lastName: data.lastName || "",
-          email: data.email || "",
-          mobile: data.mobile || "",
-          dateOfBirth: data.dateOfBirth || "",
-          gender: data.gender || "male",
-          maritalStatus: data.maritalStatus || "single",
-          panCard: data.panCard || "",
-          aadharNumber: data.aadharNumber || "",
-          address: data.address || "",
-          city: data.city || "",
-          state: data.state || "",
-          pincode: data.pincode || "",
-          employmentType: "salaried",
-          companyName: "",
-          designation: "",
-          monthlyIncome: "",
-          kycStatus: data.kycStatus || "PENDING",
-          creditScore: data.creditScore || 0
-        });
-      }
+      // if (response.success && response.data) {
+      //   const data = response.data;
+      //   setProfileData({
+      //     firstName: data.firstName || "",
+      //     lastName: data.lastName || "",
+      //     email: data.email || "",
+      //     mobile: data.mobile || "",
+      //     dateOfBirth: data.dateOfBirth || "",
+      //     gender: data.gender || "male",
+      //     maritalStatus: data.maritalStatus || "single",
+      //     panCard: data.panCard || "",
+      //     aadharNumber: data.aadharNumber || "",
+      //     address: data.address || "",
+      //     city: data.city || "",
+      //     state: data.state || "",
+      //     pincode: data.pincode || "",
+      //     employmentType: "salaried",
+      //     companyName: "",
+      //     designation: "",
+      //     monthlyIncome: "",
+      //     kycStatus: data.kycStatus || "PENDING",
+      //     creditScore: data.creditScore || 0
+      //   });
+      // }
     } catch (err) {
       console.error("Failed to fetch profile:", err);
       setError("Failed to load profile data");
@@ -124,25 +123,25 @@ export default function ProfilePage() {
     setSuccessMessage(null);
 
     try {
-      const response = await usersService.updateProfile({
-        firstName: profileData.firstName,
-        lastName: profileData.lastName,
-        dateOfBirth: profileData.dateOfBirth,
-        gender: profileData.gender,
-        maritalStatus: profileData.maritalStatus,
-        address: profileData.address,
-        city: profileData.city,
-        state: profileData.state,
-        pincode: profileData.pincode,
-      });
+      // const response = await usersService.updateProfile({
+      //   firstName: profileData.firstName,
+      //   lastName: profileData.lastName,
+      //   dateOfBirth: profileData.dateOfBirth,
+      //   gender: profileData.gender,
+      //   maritalStatus: profileData.maritalStatus,
+      //   address: profileData.address,
+      //   city: profileData.city,
+      //   state: profileData.state,
+      //   pincode: profileData.pincode,
+      // });
 
-      if (response.success) {
-        setSuccessMessage("Profile updated successfully!");
-        setIsEditing(false);
-        setTimeout(() => setSuccessMessage(null), 3000);
-      } else {
-        setError(response.error || "Failed to update profile");
-      }
+      // if (response.success) {
+      //   setSuccessMessage("Profile updated successfully!");
+      //   setIsEditing(false);
+      //   setTimeout(() => setSuccessMessage(null), 3000);
+      // } else {
+      //   setError(response.error || "Failed to update profile");
+      // }
     } catch (err) {
       setError("An error occurred while updating profile");
     } finally {
